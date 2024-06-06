@@ -1,0 +1,34 @@
+{
+  "name": "MVC-template-for-REST-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "JavaScript",
+    "NodeJS",
+    "Express",
+    "WebServer",
+    "Web",
+    "Back-End",
+    "Development"
+  ],
+  "author": "Ignacio Castro Centeno",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
