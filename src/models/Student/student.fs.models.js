@@ -2,19 +2,9 @@ import fs from "fs";
 
 export default class StudentModelsFs {
   #students;
-  #idCounter;
   constructor() {
     this.#students = "src/models/Student/students.json";
-    this.#idCounter = 0;
   }
-
-  /* getGrades = async () => {
-    const data = await fs.promises.readFile(this.students, "utf-8");
-    console.log("DATA: \n" + data);
-
-    // Como no realizamos escritura de datos, devolvemos directamente todos los usuarios
-    return data;
-  }; */
 
   getGrades = async () => {
     const data = await fs.promises.readFile(this.#students, "utf-8");
@@ -25,14 +15,21 @@ export default class StudentModelsFs {
   };
 
   createGrade = async (student) => {
-    const usersArr = JSON.parse(
+    const studentsArr = JSON.parse(
       await fs.promises.readFile(this.#students, "utf-8")
     );
-    student["id"] = ++this.#idCounter;
 
-    usersArr.push(student);
+    /*
+    [SOLVED] Small Fix: The students' IDs were unique only if the server is never reset. Otherwise, IDs will repeat
+    since the 'idCounter' private property from the 'StudentModelsFs' class, was always reset every time the server
+    went on/off.
+    */
+    const STUDENTS_COUNTER = ++studentsArr[0]["systemInformation"]["idCounter"];
+    student["id"] = STUDENTS_COUNTER;
 
-    const usersJSON = JSON.stringify(usersArr);
+    studentsArr.push(student);
+
+    const usersJSON = JSON.stringify(studentsArr);
     await fs.promises.writeFile(this.#students, usersJSON);
 
     return student;

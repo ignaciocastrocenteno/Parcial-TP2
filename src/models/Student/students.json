@@ -1,13 +1,16 @@
 [
   {
-    "file-type": "JSON",
-    "encoding": "utf-8",
-    "title": "Students' Grades File",
-    "collegeName": "Instituto de Tecnología ORT Argentina",
-    "careername": "Analista de Sistemas Computacionales (ASC)"
+    "systemInformation": {
+      "file-type": "JSON",
+      "encoding": "utf-8",
+      "title": "Students' Grades File",
+      "collegeName": "Instituto de Tecnología ORT Argentina",
+      "careername": "Analista de Sistemas Computacionales (ASC)",
+      "idCounter": 5
+    }
   },
-  {"name": "Fulano Gómez", "grade": 9, "id": 1},
   {"name": "Mengana Torres", "grade": 6.5, "id": 2},
   {"name": "Sutano Gonzales", "grade": 6.5, "id": 3},
-  {"name": "Juan Perez", "grade": 10, "id": 4}
+  {"name": "Juan Pérez", "grade": 10, "id": 4},
+  {"name": "ORTMan The Nice Guy", "grade": 3.5, "id": 5}
 ]
